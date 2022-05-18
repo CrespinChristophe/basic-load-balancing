@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: texte-service2
+    name: texte-service
 
   cloud:
     consul:
