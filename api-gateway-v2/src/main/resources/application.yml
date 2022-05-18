@@ -1,0 +1,44 @@
+server:
+  port:
+    8080
+
+spring:
+  application:
+    name: api-gateway-v2
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}:${random.uuid}
+#        health-check-path: "/actuator/health"
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: to-print-service
+          uri: lb://print-service
+          predicates:
+            - Path=/localhost/print
+            - Method=GET
+
+        - id: to-texte-service
+          uri: lb://texte-service
+          predicates:
+            - Path=/localhost/texte
+            - Method=GET
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - beans
+          - mappings
+          - metrics
