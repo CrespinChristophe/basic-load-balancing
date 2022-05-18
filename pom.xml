@@ -7,6 +7,7 @@
 		<module>texte-service1</module>
 		<module>texte-service2</module>
 		<module>print-service</module>
+		<module>api-gateway-v1</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
