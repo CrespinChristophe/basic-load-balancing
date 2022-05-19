@@ -34,6 +34,18 @@ spring:
             - Path=/texte
             - Method=GET
 
+        - id: mot
+          uri: lb://print-service
+          predicates:
+            - Path=/mot
+            - Method=GET
+          filters:
+            - name: AddRequestParamater
+              args:
+                name: mot
+                value: gateway
+
+
 
 management:
   endpoints:
