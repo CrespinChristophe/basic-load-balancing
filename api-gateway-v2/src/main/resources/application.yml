@@ -5,6 +5,8 @@ server:
 spring:
   application:
     name: api-gateway-v2
+  main:
+    web-application-type: reactive
 
   cloud:
     consul:
@@ -23,13 +25,13 @@ spring:
         - id: to-print-service
           uri: lb://print-service
           predicates:
-            - Path=/localhost/print
+            - Path=/print
             - Method=GET
 
         - id: to-texte-service
           uri: lb://texte-service
           predicates:
-            - Path=/localhost/texte
+            - Path=/texte
             - Method=GET
 
 

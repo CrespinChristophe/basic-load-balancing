@@ -21,7 +21,7 @@ public class PrintServiceController {
     @GetMapping
     public String getPrint(){
 
-        String responseBody = restTemplate.getForObject("http://texte-service/print", String.class);
+        String responseBody = restTemplate.getForObject("http://texte-service/texte", String.class);
 
         return "Get to texte-service\n response ==> " + responseBody;
 

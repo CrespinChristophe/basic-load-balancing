@@ -23,7 +23,7 @@ public class GatewayController {
     @GetMapping("/texte")
     public String fromTexteService(){
 
-        return restTemplate.getForObject("http://texte-service/print", String.class);
+        return restTemplate.getForObject("http://texte-service/texte", String.class);
 
     }
 
