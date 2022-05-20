@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "texte-service")
 public interface TexteClient {
 
-    // Envoie: GET http://teste-service/feign
+    // Envoie: GET http://texte-service/feign
     @GetMapping(path = "/feign")
     public String texte();
 
