@@ -40,7 +40,7 @@ spring:
             - Path=/mot
             - Method=GET
           filters:
-            - name: AddRequestParamater
+            - name: AddRequestParameter
               args:
                 name: mot
                 value: gateway
