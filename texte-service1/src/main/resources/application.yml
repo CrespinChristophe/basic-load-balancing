@@ -15,21 +15,7 @@ spring:
         instance-id: ${spring.application.name}:${random.uuid}
 #        health-check-path: "/actuator/health"
 
-feign:
-  circuitbreaker:
-    enabled: true
-    alphanumeric-ids:
-      enabled: true
-  client:
-    config:
-      user-service:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: BASIC
-      client-service:
-        #error-decoder: bstorm.akimts.film.config.CustomErrorDecoder
-        #retryer: bstorm.akimts.film.config.CustomRetryer
-        loggerLevel: FULL
+
 
 management:
   endpoints:
